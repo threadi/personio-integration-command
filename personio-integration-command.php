@@ -4,9 +4,10 @@
  * Description:       Provides command palette for Personio Integration Light.
  * Requires at least: 6.9
  * Requires PHP:      8.1
+ * Requires Plugins:  personio-integration-light
  * Version:           1.0.0
- * Author:            Thomas Zwirner
- * Author URI:        https://www.thomaszwirner.de
+ * Author:           Thomas Zwirner
+ * Author URI:       https://www.thomaszwirner.de
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       personio-integration-command
@@ -29,7 +30,7 @@ if ( PHP_VERSION_ID < 80100 ) { // @phpstan-ignore smaller.alwaysFalse
  */
 function personio_integration_command_enqueue_scripts(): void {
 	// get path for the asset script.
-	$script_asset_path = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'dist/commands.asset.php';
+	$script_asset_path = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'build/index.asset.php';
 
 	// bail if the asset script does not exist.
 	if ( ! file_exists( $script_asset_path ) ) {
@@ -41,7 +42,7 @@ function personio_integration_command_enqueue_scripts(): void {
 
 	wp_enqueue_script(
 		'personio-integration-command',
-		trailingslashit( plugin_dir_url( __FILE__ ) ) . 'dist/commands.js',
+		trailingslashit( plugin_dir_url( __FILE__ ) ) . 'build/index.js',
 		$script_asset['dependencies'],
 		$script_asset['version'],
 		true

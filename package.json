@@ -4,16 +4,12 @@
   "description": "Provides command palette for Personio Integration Light.",
   "author": "Thomas Zwirner",
   "license": "GPL-2.0-or-later",
+  "main": "index.js",
   "scripts": {
-    "build": "wp-scripts build src/commands.js --output-path=dist/",
-    "start": "wp-scripts start src/commands.js --output-path=dist/"
-  },
-  "devDependencies": {
-    "@wordpress/scripts": "~30.7"
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
   },
   "dependencies": {
-    "@babel/core": "^7.28.5",
-    "@babel/runtime": "^7.28.4",
-    "@wordpress/i18n": "^6.2.0",
-    "@wordpress/icons": "^1.0.0"
+    "@wordpress/icons": "^11.3.0",
+    "@wordpress/scripts": "^31.1.0"
   }}
